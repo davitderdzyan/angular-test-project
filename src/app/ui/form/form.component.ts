@@ -5,35 +5,6 @@ import { CustomInputComponent } from '../custom-input/custom-input.component';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
-const fieldNames = [
-  'provider_name',
-  'provider_type',
-  'expected_cost',
-  'actual_cost',
-  'expected_start_time',
-  'expeced_end_time',
-  'actual_end_time',
-  'actual_start_time',
-  'provided_product',
-  'expected_result',
-  'note',
-];
-
-// interface Item {
-//    [key: string]: string | number | Date | undefined,
-//   'provider_name': string | null,
-//   'provider_type':string | null,
-//   'expected_cost':number | null,
-//   'actual_cost':number | null,
-//   'expected_start_time':Date | null,
-//   'expeced_end_time':Date | null,
-//   'actual_end_time':Date | null,
-//   'actual_start_time':Date | null,
-//   'provided_product': string | null,
-//   'expected_result':string | null,
-//   'note':string | null
-// }
-
 @Component({
   selector: 'app-form',
   standalone: true,
