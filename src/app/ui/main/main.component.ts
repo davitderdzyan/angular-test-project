@@ -187,7 +187,7 @@ export class MainComponent {
   }
 
   forward(): void {
-    if (this.iteration < this.displayData.length % this.itemsPerPage) {
+    if (this.iteration + 1 < this.displayData.length % this.itemsPerPage) {
       this.iteration++;
     }
   }
