@@ -13,6 +13,21 @@ export type Field = {
   type: 'string' | 'number' | 'date';
 };
 
+export type Item = {
+  id: string | null;
+  provider_name: string | null;
+  provider_type: string | null;
+  expected_cost: number | null;
+  actual_cost: number | null;
+  expected_start_time: Date | null;
+  expeced_end_time: Date | null;
+  actual_end_time: Date | null;
+  actual_start_time: Date | null;
+  provided_product: string | null;
+  expected_result: string | null;
+  note: string | null;
+};
+
 @Component({
   selector: 'app-main',
   standalone: true,
@@ -35,8 +50,21 @@ export class MainComponent {
   search: string = '';
   isViewMode = false;
   data: any[] = [];
-  formData: any = {};
-  displayData: any[] = [];
+  formData: Item = {
+    id: null,
+    provider_name: null,
+    provider_type: null,
+    expected_cost: null,
+    actual_cost: null,
+    expected_start_time: null,
+    expeced_end_time: null,
+    actual_end_time: null,
+    actual_start_time: null,
+    provided_product: null,
+    expected_result: null,
+    note: null,
+  };
+  displayData: Item[] = [];
 
   fieldNames: Field[] = [
     {
@@ -93,7 +121,7 @@ export class MainComponent {
     this.data.push(item);
     this.filter();
     this.isFormOpen = false;
-    this.formData = {};
+    this.resetFormData();
   }
 
   openViewMode(item: any): void {
@@ -112,14 +140,31 @@ export class MainComponent {
     this.isViewMode = false;
     this.data.push(this.formData);
     this.filter();
-    this.formData = {};
+    this.resetFormData();
   }
 
   onFormCancel(): void {
     this.isFormOpen = false;
     this.data.push(this.formData);
     this.filter();
-    this.formData = {};
+    this.resetFormData();
+  }
+
+  private resetFormData() {
+    this.formData = {
+      id: null,
+      provider_name: null,
+      provider_type: null,
+      expected_cost: null,
+      actual_cost: null,
+      expected_start_time: null,
+      expeced_end_time: null,
+      actual_end_time: null,
+      actual_start_time: null,
+      provided_product: null,
+      expected_result: null,
+      note: null,
+    };
   }
 
   filter(): void {
@@ -127,6 +172,8 @@ export class MainComponent {
       Object.values(item).some((val: any) => {
         if (typeof val === 'string') {
           return val.includes(this.search);
+        } else if (typeof val === 'number') {
+          return (val + '').includes(this.search);
         }
         return false;
       })
