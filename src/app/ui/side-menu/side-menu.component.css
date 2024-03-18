@@ -1,0 +1,33 @@
+.side_menu {
+  width: 43px;
+  display: block;
+  background-color: #003b95;
+  height: 100%;
+  min-height: calc(100vh - 54px);
+}
+
+.skip {
+  height: 12px;
+  margin: 6px 5px;
+}
+
+#skip_btn {
+  margin: 3px 9.5px 0;
+}
+
+.btns {
+  margin: 16px 0;
+}
+
+.icon {
+  width: 36px;
+  margin: 0 3px;
+}
+
+.bk_none {
+  background: transparent;
+}
+
+.btns > button {
+  margin-bottom: 32px;
+}

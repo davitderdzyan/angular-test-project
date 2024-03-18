@@ -1,0 +1,102 @@
+<div class="main">
+  <div class="title">
+    <div>Lorem ipsum</div>
+    <app-tooltip
+      class="info"
+      [hint]="'Lorem ipsum dolor sit amet.'"
+    ></app-tooltip>
+  </div>
+  <div class="tabs">
+    <div class="tabs_left">
+      <div class="tab">Lorem ipsum</div>
+      <div class="tab active">Providers and costs</div>
+      <div class="tab">Lorem ipsum</div>
+    </div>
+    <img class="arrow_up" src="../../../assets/icons/up.svg" />
+  </div>
+  <div
+    class="providers_and_costs"
+    [style.height.px]="
+      isFormOpen ? 550 + (displayData.length % itemsPerPage) * 30 : null
+    "
+  >
+    <div class="flex app_bar_flex">
+      <div class="providers_title">Providers and costs</div>
+      <div class="flex actions">
+        <div class="search-container">
+          <input
+            type="text"
+            placeholder="Search here..."
+            [(ngModel)]="search"
+          />
+          <button type="submit" (click)="filter()">Search</button>
+        </div>
+        <img
+          (click)="isFormOpen && !isViewMode ? null : addItem()"
+          class="add_icon"
+          src="../../../assets/icons/add.svg"
+        />
+      </div>
+    </div>
+    <div class="flex">
+      <app-filter></app-filter>
+      <app-pagination
+        (backClicked)="back()"
+        (forwardClicked)="forward()"
+        [iteration]="iteration"
+        [itemsPerPage]="itemsPerPage"
+        [count]="displayData.length"
+      ></app-pagination>
+    </div>
+    <app-form
+      (save)="add($event)"
+      class="table_form"
+      [data]="formData"
+      [isViewMode]="isViewMode"
+      (cancel)="onFormCancel()"
+      *ngIf="isFormOpen"
+    ></app-form>
+    <div class="table-container" [ngClass]="{ 'adjust-table': isFormOpen }">
+      <app-table-container
+        [fieldNames]="fieldNames"
+        [displayData]="displayData"
+        [itemsPerPage]="itemsPerPage"
+        [iteration]="iteration"
+        [isFormOpen]="isFormOpen"
+        [formData]="formData"
+        (viewModeClicked)="openViewMode($event)"
+      ></app-table-container>
+    </div>
+
+    <div [style.top.px]="isFormOpen ? -270 : null" class="pagination_container">
+      <app-pagination
+        [paginationClass]="'bottom-pagination'"
+        (backClicked)="back()"
+        (forwardClicked)="forward()"
+        [iteration]="iteration"
+        [itemsPerPage]="itemsPerPage"
+        [count]="displayData.length"
+      ></app-pagination>
+    </div>
+  </div>
+
+  <div class="tabs" id="lorem_tab">
+    <div class="tabs_left">
+      <div class="tab active" id="lorem">lorem ipsum</div>
+    </div>
+    <img class="arrow_up" src="../../../assets/icons/down.svg" />
+  </div>
+  <div class="lorem_content">
+    <div class="flex">
+      <app-filter></app-filter>
+      <div class="pagination_container">
+        <app-pagination
+          [paginationClass]="'bottom-pagination'"
+          [iteration]="0"
+          [itemsPerPage]="50"
+          [count]="200"
+        ></app-pagination>
+      </div>
+    </div>
+  </div>
+</div>

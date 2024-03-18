@@ -1,0 +1,145 @@
+<div class="form">
+  <div class="form_container">
+    <div class="align_form_parts">
+      <div class="form_left_side">
+        <div class="align_columns">
+          <div class="column">
+            <app-custom-input
+              [name]="'Provider name'"
+              [hint]="'Provider name hint'"
+              [placeholder]="'Enter provider name'"
+              [value]="data['provider_name']"
+              [disabled]="isViewMode"
+              (dataChange)="onChange('provider_name', $event, 'text')"
+            ></app-custom-input>
+            <app-custom-input
+              [name]="'Expected cost'"
+              [hint]="'Expected cost hint'"
+              [placeholder]="'Enter expected cost'"
+              [value]="data['expected_cost']"
+              [disabled]="isViewMode"
+              [type]="'number'"
+              (dataChange)="onChange('expected_cost', $event, 'number')"
+            ></app-custom-input>
+            <app-custom-input
+              [name]="'Expected start time'"
+              [hint]="'Expected start time hint'"
+              [placeholder]="'DD/MM/YYYY'"
+              [disabled]="isViewMode"
+              [value]="data['expected_start_time']"
+              [type]="'date'"
+              (dataChange)="onChange('expected_start_time', $event, 'date')"
+            ></app-custom-input>
+            <app-custom-input
+              [name]="'Expected end time'"
+              [hint]="'Expected end time hint'"
+              [placeholder]="'DD/MM/YYYY'"
+              [disabled]="isViewMode"
+              [value]="data['expected_end_time']"
+              [type]="'date'"
+              (dataChange)="onChange('expected_end_time', $event, 'date')"
+            ></app-custom-input>
+          </div>
+          <div class="column">
+            <app-custom-input
+              [name]="'Provider type'"
+              [hint]="'Provider type hint'"
+              [placeholder]="'Choose provider type'"
+              [disabled]="isViewMode"
+              [value]="data['provider_type']"
+              [type]="'dropdown'"
+              [values]="products"
+              (dataChange)="onChange('provider_type', $event, 'text')"
+            ></app-custom-input>
+            <app-custom-input
+              [name]="'Actual cost'"
+              [hint]="'Actual cost hint'"
+              [type]="'number'"
+              [disabled]="isViewMode"
+              [placeholder]="'Enter actual cost'"
+              [value]="data['actual_cost']"
+              (dataChange)="onChange('actual_cost', $event, 'number')"
+            ></app-custom-input>
+            <app-custom-input
+              [name]="'Actual end time'"
+              [hint]="'Actual end time hint'"
+              [placeholder]="'DD/MM/YYYY'"
+              [disabled]="isViewMode"
+              [value]="data['actual_end_time']"
+              [type]="'date'"
+              (dataChange)="onChange('actual_end_time', $event, 'date')"
+            ></app-custom-input>
+            <app-custom-input
+              [name]="'Actual start time'"
+              [hint]="'Actual start time hint'"
+              [value]="data['actual_start_time']"
+              [disabled]="isViewMode"
+              [placeholder]="'DD/MM/YYYY'"
+              [type]="'date'"
+              (dataChange)="onChange('actual_start_time', $event, 'date')"
+            ></app-custom-input>
+          </div>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <div class="form_right_side">
+        <div class="align_columns">
+          <div class="column">
+            <app-custom-input
+              [name]="'Provided product'"
+              [hint]="'Provided product hint'"
+              [disabled]="isViewMode"
+              [placeholder]="'Choose provided product'"
+              [value]="data['provided_product']"
+              [type]="'dropdown'"
+              [values]="providedProducts"
+              (dataChange)="onChange('provided_product', $event, 'text')"
+            ></app-custom-input>
+          </div>
+          <div class="column">
+            <app-custom-input
+              [name]="'Expected result'"
+              [hint]="'Expected result hint'"
+              [disabled]="isViewMode"
+              [placeholder]="'Enter expected result'"
+              [value]="data['expected_result']"
+              (dataChange)="onChange('expected_result', $event, 'text')"
+            ></app-custom-input>
+          </div>
+        </div>
+        <div>
+          <div class="label_container">
+            <span class="label_text">Note</span>
+            <app-tooltip
+              class="label_tooltip"
+              [size]="9.01"
+              [hint]="'Note hint'"
+            ></app-tooltip>
+          </div>
+          <textarea
+            matInput
+            name="Note"
+            cols="35"
+            rows="4"
+            placeholder="Enter text"
+            [readonly]="isViewMode"
+            [value]="data['note']"
+            [(ngModel)]="data['note']"
+            required
+          ></textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="actions" *ngIf="!isViewMode">
+    <a (click)="onCancel()" class="cancel">Cancel</a>
+    <a (click)="onSave()" class="save">Save</a>
+  </div>
+  <div class="view_actions" *ngIf="isViewMode">
+    <img
+      (click)="isViewMode = false"
+      src="../../../assets/icons/edit.svg"
+      class="edit"
+    />
+  </div>
+</div>

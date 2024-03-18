@@ -1,0 +1,142 @@
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+tr {
+  z-index: 100;
+}
+
+.th_content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 10.5px;
+  margin-right: 10.5px;
+  gap: 10px;
+}
+
+th {
+  background-color: #dadada;
+  border-left: 0.5px solid #aeaeae;
+  border-top: 0.5px solid #aeaeae;
+  height: 29.2px;
+  user-select: none;
+  cursor: pointer;
+}
+
+table {
+  margin-top: 12px;
+  margin-bottom: 10px;
+}
+
+.body_tr {
+  border: 1px solid #003b95;
+  background-color: #eaeaea;
+}
+
+td {
+  background-color: #eaeaea;
+  padding: 0 10px;
+  border-right: 0.5px solid #aeaeae;
+  text-wrap: nowrap;
+}
+
+.empty_th {
+  padding: 0;
+}
+
+.cdk-drag-preview {
+  min-width: 50px;
+  font-size: 12px;
+  font-family: "Montserratarm";
+  display: block;
+  font-weight: normal;
+}
+
+tr {
+  height: 29px;
+}
+
+.replace {
+  padding: 6.4px 7.5px 6px 8px;
+}
+
+.replace_col {
+  padding: 0;
+}
+
+table,
+th,
+td {
+  border-collapse: collapse;
+}
+
+.form_td {
+  width: 100vw;
+}
+
+.table_form {
+  position: relative;
+  display: block;
+  top: 72px;
+  height: 291px;
+}
+
+.padding_tr {
+  padding-bottom: 300px;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.add {
+  height: 30px;
+  width: 30px;
+  margin-left: 24px;
+  margin-right: 5px;
+}
+
+.add {
+  border: 1px solid #003b95;
+  border-bottom: none;
+}
+.add_icon {
+  margin-left: 24px;
+  height: 32px;
+  cursor: pointer;
+}
+
+.data_col {
+  font-size: 12px;
+  font-family: "Montserratarm";
+  font-weight: normal;
+  color: #212121;
+  background-color: #ffffff;
+  border-bottom: 0.5px solid #aeaeae;
+  height: 29px;
+  min-width: 27px;
+}
+
+.data_edit {
+  font-size: 12px;
+  font-family: "Montserratarm";
+  font-weight: normal;
+  min-width: 100px;
+}
+
+.sort {
+  height: 14px;
+}
+
+.field_name {
+  color: #212121;
+  font-family: "Montserratarm";
+  font-weight: normal;
+  font-size: 14px;
+  text-wrap: nowrap;
+  display: block;
+}

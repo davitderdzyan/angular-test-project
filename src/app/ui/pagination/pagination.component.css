@@ -1,0 +1,33 @@
+.pagination-info,
+.pagination-iteration {
+  display: block;
+  font-size: 12px;
+  font-family: "Montserratarm";
+  color: #212121;
+}
+
+.pagination-iteration {
+  margin-left: 30px;
+}
+
+.pagination-forward {
+  margin-left: 22px;
+  height: 26px;
+}
+
+.pagination-back {
+  margin-left: 30px;
+  height: 16px;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  margin-right: 25px;
+}
+
+.bottom-pagination {
+  justify-content: right;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}

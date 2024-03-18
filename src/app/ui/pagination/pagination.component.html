@@ -1,0 +1,17 @@
+<div class="{{ 'pagination ' + paginationClass }}">
+  <div class="pagination-info">Items per page: {{ itemsPerPage }}</div>
+  <div class="pagination-iteration">
+    {{ count == 0 ? 0 : startIndex }} - {{ endIndex }} of
+    {{ count }}
+  </div>
+  <img
+    (click)="back()"
+    class="pagination-back"
+    src="../../../assets/icons/back.svg"
+  />
+  <img
+    (click)="forward()"
+    class="pagination-forward"
+    src="../../../assets/icons/forward.svg"
+  />
+</div>

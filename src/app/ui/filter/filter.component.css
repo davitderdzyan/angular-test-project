@@ -1,0 +1,24 @@
+.filter {
+  height: 26px;
+  width: 26px;
+}
+
+.filter-title {
+  font-family: "Montserratarm";
+  font-weight: 500;
+  font-size: 12px;
+  margin-left: 10px;
+}
+
+.filter-container {
+  display: flex;
+  margin-left: 33px;
+  align-items: center;
+}
+
+.expand {
+  margin-left: 5px;
+  height: 12px;
+  width: 12px;
+  padding: 8px;
+}

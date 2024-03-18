@@ -1,0 +1,80 @@
+.header {
+  height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  margin-left: 64px;
+}
+
+.avatar {
+  height: 32px;
+  width: 32px;
+}
+
+.settings {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.circle {
+  height: 13px;
+  width: 13px;
+}
+
+.bell {
+  position: relative;
+  display: block;
+  margin-inline: auto;
+
+  height: 24px;
+}
+
+.bell-image {
+  width: 20px;
+}
+
+.dots {
+  width: 4px;
+}
+
+.bell::before {
+  content: attr(data-count);
+  position: absolute;
+  left: 11px;
+  top: 0.01px;
+  font-family: "Madimi One", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  border-radius: 10px;
+  font-size: 6px;
+  background: red;
+  color: rgb(255, 255, 255);
+  width: 13px;
+  height: 13.35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.name {
+  font-size: 16;
+  font-weight: 500;
+  color: #212121;
+  font-family: "Inter", sans-serif;
+}
+
+.user {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-left: 40px;
+}
+
+.dots_btn {
+  height: 15px;
+  margin-left: 20px;
+}

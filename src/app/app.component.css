@@ -1,0 +1,13 @@
+.flex {
+  display: flex;
+}
+
+.side_menu {
+  /* height: calc(100vh + 54px); */
+  display: block;
+}
+
+.main_app {
+  width: calc(100% - 43px);
+  float: right;
+}

@@ -1,0 +1,51 @@
+<table>
+  <tr>
+    <th class="empty_th"></th>
+    <th
+      (click)="isFormOpen ? null : sort(field.systemName)"
+      *ngFor="let field of fieldNames"
+    >
+      <div class="th_content">
+        <img class="sort" src="../../../assets/icons/sort.svg" /><span
+          class="field_name"
+          >{{ field.displayName }}</span
+        >
+        <app-tooltip [size]="16.38" [hint]="field.displayName"></app-tooltip>
+      </div>
+    </th>
+  </tr>
+  <tbody cdkDropList (cdkDropListDropped)="onDrop($event)">
+    <tr class="add" *ngIf="isFormOpen">
+      <td class="empty_th padding_tr replace_col">
+        <img class="replace" src="../../../assets/icons/replace.svg" />
+      </td>
+      <td class="padding_tr data_edit" *ngFor="let field of fieldNames">
+        {{ formatDate(formData[field.systemName], field.type) }}
+      </td>
+    </tr>
+    <tr *ngIf="!displayData.length && !isFormOpen" class="data_row">
+      <td class="data_col replace_col">
+        <img class="replace" src="../../../assets/icons/replace.svg" />
+      </td>
+      <td class="data_col" *ngFor="let field of fieldNames"></td>
+    </tr>
+    <tr
+      cdkDrag
+      (click)="onViewModeClick(item)"
+      class="data_row"
+      *ngFor="
+        let item of displayData.slice(
+          iteration * itemsPerPage,
+          iteration * itemsPerPage + itemsPerPage
+        )
+      "
+    >
+      <td class="data_col replace_col">
+        <img class="replace" src="../../../assets/icons/replace.svg" />
+      </td>
+      <td class="data_col min_col" *ngFor="let field of fieldNames">
+        {{ formatDate(item[field.systemName], field.type) }}
+      </td>
+    </tr>
+  </tbody>
+</table>

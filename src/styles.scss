@@ -1,0 +1,33 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.clear_btn {
+  background-color: white;
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+@font-face {
+  font-family: "Montserratarm"; /*a name to be used later*/
+  src: url("../src/assets/fonts/Montserratarm-Regular.otf"); /*URL to font*/
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Montserratarm"; /*a name to be used later*/
+  src: url("../src/assets/fonts/Montserratarm-Medium.otf"); /*URL to font*/
+  font-weight: 500;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
